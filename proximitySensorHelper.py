@@ -13,4 +13,5 @@ def read(prox_trig_pin, prox_echo_pin):
     prox_trig_pin.value(0)
     
     ultrason_duration = time_pulse_us(prox_echo_pin, 1, 30000)
-    return (SOUND_SPEED * ultrason_duration / 20000) * 10
+    distanceInMm = (SOUND_SPEED * ultrason_duration / 20000) * 10
+    return distanceInMm

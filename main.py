@@ -12,6 +12,7 @@ from layout import _layoutHtml
 catName = 'Czosnek'
 readSensorsIntervalSec = 5
 catIsInLedIntervalSec = 2
+proximitySensorMaxDistanceFromTheCatMm = 300
 remoteLogServerUrl = 'https://192.168.0.31:8443/'
 rpiServerLogin = 'cathouse'
 rpiServerPassword = 'Evergreen1-Thumping-Speckled'
@@ -132,7 +133,7 @@ async def readSensors():
         # proximity sensor read
         global distance_mm, isCatIn
         distance_mm = hcsr04.read(prox_trig_pin, prox_echo_pin)
-        isCatIn = distance_mm < 200
+        isCatIn = distance_mm < proximitySensorMaxDistanceFromTheCatMm
         
         # DHT22 sensor read
         global tempMainC, humidityMainPerc, tempMainF
