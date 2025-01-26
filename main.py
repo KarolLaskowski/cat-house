@@ -153,7 +153,8 @@ async def readSensors():
         
         catInStateStr = 'IN' if isCatIn else 'OUT'
         data_entry = 'Cat is {}, mainTemp: {:.1f}℃, mainHum: {:.1f}%, padTemp: {:.1f}℃, picoTemp: {:.1f}℃'.format(catInStateStr, tempMainC, humidityMainPerc, tempPadC, tempInternalC)
-        log.write(file, data_entry)
+        #log.write(file, data_entry)
+        print(data_entry)
 
         if serverStarted:
             send_log_to_db()
