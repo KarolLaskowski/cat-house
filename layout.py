@@ -153,10 +153,10 @@ _layoutHtml = """<!DOCTYPE html>
                 <div class="window window-right"></div>
             </div>
             <div class="cat"></div>
-        </div>       
+        </div>
     </body>
     <script type="text/javascript">
-        //setTimeout(function() {{ window.location = window.location; }}, 5000);
+        setTimeout(function() {{ window.location = window.location; }}, 5000);
     </script>
 </html>
 """
